@@ -1,5 +1,5 @@
-import 'package:flutter_advance/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_advance/screen/base_screen.dart';
 
 class LearningLoginButton extends StatelessWidget {
   final bool isGoogleSignIn;
@@ -13,7 +13,7 @@ class LearningLoginButton extends StatelessWidget {
         Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => const HomeScreen(),
+              builder: (context) => BaseScreen(),
             ));
       },
       style: ButtonStyle(
