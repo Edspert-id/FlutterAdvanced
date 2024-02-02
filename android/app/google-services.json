@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "688553563392",
+    "project_id": "elearning-edspert-trial",
+    "storage_bucket": "elearning-edspert-trial.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:688553563392:android:262fdec29358b7b5150fe5",
+        "android_client_info": {
+          "package_name": "com.example.flutter_advance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "688553563392-pb7o5n22isv05jrat9ac32kc7ogea7j2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDr1E84Fjh26s0DXWZBblLuEQg8z3siJt0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "688553563392-pb7o5n22isv05jrat9ac32kc7ogea7j2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "688553563392-p94ub638cus43vl2gp0igpcor07t74je.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterAdvance"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

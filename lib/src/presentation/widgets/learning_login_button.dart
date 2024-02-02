@@ -4,19 +4,15 @@ import '../screens/base_screen.dart';
 
 class LearningLoginButton extends StatelessWidget {
   final bool isGoogleSignIn;
+  final VoidCallback onPressed;
 
-  const LearningLoginButton({super.key, required this.isGoogleSignIn});
+  const LearningLoginButton(
+      {super.key, required this.isGoogleSignIn, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {
-        Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => BaseScreen(),
-            ));
-      },
+      onPressed: onPressed,
       style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(
               isGoogleSignIn ? Colors.white : Colors.black)),

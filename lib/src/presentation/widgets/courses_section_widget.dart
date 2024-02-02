@@ -12,6 +12,10 @@ class CoursesSectionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CourseBloc, CourseState>(
+      buildWhen: (previous, current) =>
+          current is GetCourseDetailLoading ||
+          current is GetCourseDetailError ||
+          current is GetCourseDetailSuccess,
       builder: (context, state) {
         if (state is GetCoursesSuccess) {
           return LessonList(

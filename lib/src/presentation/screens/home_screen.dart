@@ -20,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     SchedulerBinding.instance.addPostFrameCallback((timeStamp) async {
       context.read<CourseBloc>().add(GetCoursesEvent());
+      context.read<BannerCubit>().getBanners();
     });
     super.initState();
   }

@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_advance/src/data/firebase/firebase_service.dart';
+import 'package:flutter_advance/src/data/repositories/auth_repository.dart';
+import 'package:flutter_advance/src/domain/usecases/sign_in_google_usecase.dart';
+import 'package:flutter_advance/src/presentation/bloc/auth/auth_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../data/repositories/course_repository.dart';
@@ -19,6 +23,10 @@ class MyApp extends StatelessWidget {
               CourseBloc(GetCoursesUsecase(CourseRepository())),
         ),
         BlocProvider(create: (context) => BannerCubit()),
+        BlocProvider(
+          create: (context) => AuthBloc(SignInWithGoogleUsecase(
+              AuthRepository(firebaseService: FirebaseService()))),
+        ),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
