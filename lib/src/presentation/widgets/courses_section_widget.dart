@@ -13,9 +13,7 @@ class CoursesSectionWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<CourseBloc, CourseState>(
       buildWhen: (previous, current) =>
-          current is GetCourseDetailLoading ||
-          current is GetCourseDetailError ||
-          current is GetCourseDetailSuccess,
+          current is GetCoursesSuccess || current is GetCoursesLoading,
       builder: (context, state) {
         if (state is GetCoursesSuccess) {
           return LessonList(

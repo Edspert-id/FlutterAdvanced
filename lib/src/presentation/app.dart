@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_advance/src/data/firebase/firebase_service.dart';
 import 'package:flutter_advance/src/data/repositories/auth_repository.dart';
+import 'package:flutter_advance/src/domain/usecases/registration_usecase.dart';
 import 'package:flutter_advance/src/domain/usecases/sign_in_google_usecase.dart';
 import 'package:flutter_advance/src/presentation/bloc/auth/auth_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../data/repositories/course_repository.dart';
 import '../domain/usecases/get_courses_usecase.dart';
+import '../domain/usecases/upload_file_usecase.dart';
 import 'bloc/banner/banner_cubit.dart';
 import 'bloc/course/course_bloc.dart';
 import 'screens/splash_screen.dart';
@@ -24,8 +26,15 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(create: (context) => BannerCubit()),
         BlocProvider(
-          create: (context) => AuthBloc(SignInWithGoogleUsecase(
-              AuthRepository(firebaseService: FirebaseService()))),
+          create: (context) {
+            AuthRepository repository =
+                AuthRepository(firebaseService: FirebaseService());
+            return AuthBloc(
+              SignInWithGoogleUsecase(repository),
+              RegistrationUsecase(repository),
+              UploadFileUsecase(repository),
+            );
+          },
         ),
       ],
       child: MaterialApp(

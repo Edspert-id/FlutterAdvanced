@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           );
         }
-
+    
         return const SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 12),

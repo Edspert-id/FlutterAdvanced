@@ -6,10 +6,13 @@ sealed class AuthEvent {}
 class SignInWithGoogleEvent extends AuthEvent {}
 
 class RegisterUserEvent extends AuthEvent {
-  final String email;
-  final String name;
-  final String gender;
+  final RegistrationModel data;
 
-  RegisterUserEvent(
-      {required this.email, required this.name, required this.gender});
+  RegisterUserEvent({required this.data});
+}
+
+class UploadProfilePictureEvent extends AuthEvent {
+  final UploadFileParams params;
+
+  UploadProfilePictureEvent({required this.params});
 }
